@@ -1,101 +1,68 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { ArrowRight, ShieldCheck, Zap, BarChart } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="h-screen bg-white text-neutral-900 flex flex-col font-sans overflow-hidden">
+      <header className="py-6 px-10 border-b border-neutral-100 flex-shrink-0 z-10 bg-white">
+        <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
+          <span className="text-2xl font-bold tracking-tight">SwiftCredit</span>
+          <nav className="text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors cursor-pointer">About Us</nav>
+        </div>
+      </header>
+      
+      <main className="flex-grow grid grid-cols-1 lg:grid-cols-2">
+        <div className="p-12 md:p-20 flex flex-col justify-center border-r border-neutral-100 relative h-full">
+          <div className="space-y-8 animate-in fade-in slide-in-from-left-8 duration-1000 max-w-xl mx-auto lg:mx-0">
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05]">
+              Empowering your <br/>
+              <span className="text-neutral-400">business growth.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-neutral-500 font-light leading-relaxed">
+              Experience seamless, instant credit decisions designed exclusively for modern forward-thinking MSMEs.
+            </p>
+            
+            <div className="pt-6">
+              <Link href="/apply" className="group inline-flex items-center justify-center px-8 py-4 text-sm font-medium bg-neutral-900 text-white hover:bg-black transition-all rounded-full shadow-lg">
+                Apply for Capital
+                <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="bg-neutral-50 p-12 md:p-24 flex flex-col justify-center space-y-12 h-full border-t lg:border-t-0 border-neutral-100">
+          <div className="max-w-md mx-auto lg:mx-0 space-y-12">
+            <div className="group animate-in fade-in slide-in-from-right-8 duration-1000 delay-100 fill-mode-both flex items-start">
+               <div className="bg-white p-3 rounded-2xl shadow-sm border border-neutral-100 mr-6 shrink-0">
+                 <Zap className="w-6 h-6 text-neutral-900 stroke-[1.5]" />
+               </div>
+               <div>
+                 <h3 className="font-semibold text-lg mb-1">Instant Decisions</h3>
+                 <p className="text-neutral-500 font-light leading-relaxed">Get your application reviewed in real-time, eliminating agonizing wait periods.</p>
+               </div>
+            </div>
+            <div className="group animate-in fade-in slide-in-from-right-8 duration-1000 delay-200 fill-mode-both flex items-start">
+               <div className="bg-white p-3 rounded-2xl shadow-sm border border-neutral-100 mr-6 shrink-0">
+                 <ShieldCheck className="w-6 h-6 text-neutral-900 stroke-[1.5]" />
+               </div>
+               <div>
+                 <h3 className="font-semibold text-lg mb-1">Smart Evaluation</h3>
+                 <p className="text-neutral-500 font-light leading-relaxed">Our system uses objective metrics to ensure fair and accurate loan outcomes.</p>
+               </div>
+            </div>
+            <div className="group animate-in fade-in slide-in-from-right-8 duration-1000 delay-300 fill-mode-both flex items-start">
+               <div className="bg-white p-3 rounded-2xl shadow-sm border border-neutral-100 mr-6 shrink-0">
+                 <BarChart className="w-6 h-6 text-neutral-900 stroke-[1.5]" />
+               </div>
+               <div>
+                 <h3 className="font-semibold text-lg mb-1">Total Transparency</h3>
+                 <p className="text-neutral-500 font-light leading-relaxed">Understand exactly how your business profile influenced the final credit score.</p>
+               </div>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
