@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SwiftCredit: MSME Lending Decision System
 
-## Getting Started
+A premium, full-stack Next.js application designed to instantly evaluate and process lending decisions for Micro, Small, and Medium Enterprises (MSMEs). SwiftCredit utilizes an algorithmic risk engine paired with a stunning, high-contrast, black-and-white editorial aesthetic to deliver real-time credit outcomes.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*   **Algorithmic Precision**: A robust algorithmic decision engine that processes financial profiles against strict industry baseline ratios (EMI-to-Revenue, Capital-to-Revenue, etc.) to calculate a comprehensive `/100` credit score.
+*   **Premium User Experience (UX)**: A luxury, ultra-modern split-screen design powered by Tailwind CSS. It features glassmorphism micro-animations, animated progress tracks, and softly glowing status borders reminiscent of high-end fintech platforms like Stripe and Apple Card.
+*   **Advanced Audit Trails**: A persistent, beautifully visualized backend logging timeline that records every application submission and automated machine-decision on the final result page.
+*   **Rate-Limiting Security**: Custom in-memory rate-limiting middleware engineered to intelligently protect the system APIs from spam while maintaining extremely low latency.
+*   **Persistent Data Architecture**: Backend powered by Prisma ORM securely connected to a high-speed Prisma Postgres cloud-native database.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technology Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*   **Framework**: Next.js 14 (App Router)
+*   **Language**: TypeScript
+*   **Styling**: Tailwind CSS
+*   **Database ORM**: Prisma (v5.22.0)
+*   **Database**: PostgreSQL
+*   **Validation**: Zod + React Hook Form
+*   **Icons**: Lucide React
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💻 Getting Started
 
-## Learn More
+### Local Development
 
-To learn more about Next.js, take a look at the following resources:
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Environment Configuration**
+   Create a `.env` file in the root directory and securely add your database connection string:
+   ```env
+   DATABASE_URL="postgres://user:password@hostname:5432/dbname?sslmode=require"
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Initialize the Database**
+   Generate the typed Prisma Client architecture and push the schema structure to align your database:
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
 
-## Deploy on Vercel
+4. **Run the Application**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser to interact with the engine.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Docker Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A highly-optimized, multi-stage Alpine Dockerfile is natively included for immediate containerized production deployments.
+
+1. **Build the Image**
+   ```bash
+   docker build -t msme-lending .
+   ```
+
+2. **Run the Container**
+   Inject your live database URL via environment variables to run the hyper-optimized production build natively mapped to port 3000:
+   ```bash
+   docker run -p 3000:3000 -e DATABASE_URL="YOUR_PRISMA_POSTGRES_URL_HERE" msme-lending
+   ```
+
+## 🧠 Decision Engine Criteria
+
+The internal scoring system evaluates an MSME across several critical dimensions:
+*   **Repayment Capacity**: The ideal ratio demands `<30%` of the firm's monthly revenue committed against the requested loan EMI.
+*   **Capital Risk Multiplier**: Loan requests exceeding 6x monthly revenue triggers heavy calculation penalties.
+*   **Entity Verification**: Real-time PAN format validation (exactly 5 letters, 4 numbers, 1 letter) stringently checks for genuine tax entity profiles.
+*   **Decision Rendering**: Automatic rejection constraints forcefully deploy on scores under `60/100`, providing dynamically rendered trailing *Reason Codes* (e.g., `HIGH_EMI_TO_REVENUE_RATIO`, `INVALID_PAN_FORMAT`) back to the user interface.
