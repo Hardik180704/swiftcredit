@@ -21,7 +21,7 @@ A premium, full-stack Next.js application designed to instantly evaluate and pro
 
 ## 🛠️ Technology Stack
 
-*   **Framework**: Next.js 14 (App Router)
+*   **Framework**: Next.js 15 (App Router)
 *   **Language**: TypeScript
 *   **Styling**: Tailwind CSS
 *   **Database ORM**: Prisma (v5.22.0)
