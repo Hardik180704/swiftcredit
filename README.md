@@ -2,6 +2,15 @@
 
 A premium, full-stack Next.js application designed to instantly evaluate and process lending decisions for Micro, Small, and Medium Enterprises (MSMEs). SwiftCredit utilizes an algorithmic risk engine paired with a stunning, high-contrast, black-and-white editorial aesthetic to deliver real-time credit outcomes.
 
+## 📸 Application Gallery
+
+<p align="center">
+  <img src="public/SC.png" alt="Landing Page UI" width="45%" style="margin: 1%" />
+  <img src="public/SC2.png" alt="Application Profile UI" width="45%" style="margin: 1%" />
+  <img src="public/SC3.png" alt="Application Loan UI" width="45%" style="margin: 1%" />
+  <img src="public/SC4.png" alt="Decision Result UI" width="45%" style="margin: 1%" />
+</p>
+
 ## 🚀 Key Features
 
 *   **Algorithmic Precision**: A robust algorithmic decision engine that processes financial profiles against strict industry baseline ratios (EMI-to-Revenue, Capital-to-Revenue, etc.) to calculate a comprehensive `/100` credit score.
